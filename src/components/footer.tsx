@@ -1,7 +1,7 @@
 import { DiscordLogoIcon, TwitterLogoIcon } from '@radix-ui/react-icons'
 import Link from 'next/link'
 
-import aguacate from "@/images/food/aguacate.png"
+import aguacate from "@/images/nature/tucan.png"
 
 
 export function SiteFooter() {

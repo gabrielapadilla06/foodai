@@ -6,9 +6,8 @@ import Link from 'next/link'
 import { useEffect, useState } from 'react'
 
 const menuItems = [
-   { id: 1, label: 'Drawings', href: '/artwork' },
-   { id: 2, label: 'Solution', href: '/solution' },
-   { id: 3, label: 'About', href: '/about' },
+   { id: 1, label: 'About', href: '/solution' },
+   { id: 2, label: 'Sign up', href: '/about' },
 ]
 
 export function SiteHeader() {
