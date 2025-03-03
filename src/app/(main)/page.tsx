@@ -6,8 +6,8 @@ import { HeroSection } from "@/components/ui/hero-section"
 import { FAQSection } from "@/components/ui/faqs"
 import { TextReveal } from "@/components/magicui/text-reveal"
 
-import cristalesImage from "@/images/colormarker/cristales.png"
-import pinguinoImage from "@/images/nature/pinguino.png"
+import cristalesImage from "@/images/image.jpeg"
+import pinguinoImage from "@/images/image.jpeg"
 
 export default function Home() {
   return (
