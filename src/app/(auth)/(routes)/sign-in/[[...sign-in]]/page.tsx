@@ -1,6 +1,7 @@
 import React from 'react';
 import { SignIn } from "@clerk/nextjs";
 import Image from 'next/image'
+import logoImage from "@/images/image.jpeg"
 
 export default function Page() {
     return (
@@ -14,11 +15,11 @@ export default function Page() {
                     <div className="hidden lg:relative lg:block lg:p-12">
                         <a className="block text-white" href="#">
                             <span className="sr-only">Home</span>
-                            <Image src='/logo.svg' width={150} height={100} alt='logo' />
+                            <Image src={logoImage.src} width={150} height={100} alt='logo' />
                         </a>
 
                         <h2 className="mt-6 text-2xl font-bold text-white sm:text-3xl md:text-4xl">
-                            Welcome to WanderTalk!
+                            Welcome to Sustainabite!
                         </h2>
 
                         <p className="mt-4 leading-relaxed text-white/90">
@@ -37,11 +38,11 @@ export default function Page() {
                                 href="#"
                             >
                                 <span className="sr-only">Home</span>
-                                <Image src='/logo.svg' width={150} height={100} alt='logo' />
+                                <Image src={logoImage.src} width={150} height={100} alt='logo' />
                             </a>
 
                             <h1 className="mt-2 text-2xl font-bold text-gray-900 sm:text-3xl md:text-4xl">
-                                Welcome to FoodAI!
+                                Welcome to Sustainabite!
                             </h1>
 
                             <p className="mt-4 leading-relaxed text-gray-500">

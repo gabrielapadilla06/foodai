@@ -21,7 +21,7 @@ export default function Home() {
         />
 
         <div className="relative mt-8">
-          <TextReveal text="Sustainabite wants to create new and tasty formulation using food byproducts" />
+          <TextReveal text="Sustainabite wants to create new and tasty formulation using food by-products" />
         </div>
 
         <div className="gap-10 p-4 py-10 sm:pb-4 md:flex md:justify-between">
