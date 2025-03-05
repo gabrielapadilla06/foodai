@@ -36,7 +36,7 @@ export function SiteHeader() {
                <div className="p-1 px-8">
                   <div className="flex h-14 items-center justify-between">
                      <Link className="text-md flex items-center" href="/">
-                        WorldBio
+                        Sustainabite
                      </Link>
 
                      <nav className="hidden md:block">

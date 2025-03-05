@@ -16,10 +16,10 @@ export function SiteFooter() {
                         className="text-primary size-8"
                      />
                      <span className="self-center whitespace-nowrap text-2xl font-semibold dark:text-white">
-                       G 
+                        Sustainabite
                      </span>
                   </Link>
-                  <p className="max-w-xs">...........</p>
+                  <p className="max-w-xs">Leveraging AI to reduce food by-products waste</p>
                </div>
                
             </div>

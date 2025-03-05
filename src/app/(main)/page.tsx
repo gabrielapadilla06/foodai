@@ -14,21 +14,21 @@ export default function Home() {
     <>
       <div className="mx-auto w-full max-w-screen-xl xl:pb-2">
         <HeroSection
-          title="Nyxb UI is the new way to build landing pages"
-          subtitle="Beautifully designed, animated components and templates built with Tailwind CSS, React, and Framer Motion."
+          title="Sustainabite"
+          subtitle="Creating the next generation of sustainable food"
           buttonText="Explore"
           heroImage={cristalesImage.src}
         />
 
         <div className="relative mt-8">
-          <TextReveal text="Magic UI will change the way you design." />
+          <TextReveal text="Sustainabite wants to create new and tasty formulation using food byproducts" />
         </div>
 
         <div className="gap-10 p-4 py-10 sm:pb-4 md:flex md:justify-between">
           <TextBentoRight
-            title="WorldBio"
+            title="Sustainabite"
             subtitle="Meet"
-            description="a website and newsletter with a collection of 2 years of drawings where people can learn about flora and fauna around the world with stories and drawings."
+            description="an AI-powered tool to reduce food byproduct waste by usign them in new formulations."
             buttonText="Learn More"
             buttonHref="/solution"
             bentoCard={{
@@ -53,9 +53,9 @@ export default function Home() {
               href: "#",
               cta: "Learn More",
             }}
-            title="Lack of public awareness"
+            title="Did you know?"
             subtitle="Problem"
-            description="about the diverse array of flora and fauna inhabiting our planet is one of the critical challenges in biodiversity conservation"
+            description="Industrial food processing generates vast amounts of waste and by-products, often ranging between 30% to 60% by weight of the total production"
           />
         </div>
 
