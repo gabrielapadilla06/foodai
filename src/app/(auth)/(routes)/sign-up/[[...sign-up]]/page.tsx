@@ -8,9 +8,6 @@ export default function Page() {
         <section className="bg-white">
             <div className="lg:grid lg:min-h-screen lg:grid-cols-12">
                 <section className="relative flex h-32 items-end bg-gray-900 lg:col-span-5 lg:h-full xl:col-span-6">
-                    <video autoPlay loop muted className="absolute inset-0 h-full w-full object-cover opacity-80">
-                        <source src="/assets/bg.mp4" type="video/mp4" />
-                    </video>
 
                     <div className="hidden lg:relative lg:block lg:p-12">
                         <a className="block text-white" href="#">
