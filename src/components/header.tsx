@@ -7,7 +7,7 @@ import { useEffect, useState } from 'react'
 
 const menuItems = [
    { id: 1, label: 'About', href: '/solution' },
-   { id: 2, label: 'Sign up', href: '/about' },
+   { id: 2, label: 'Sign up', href: '/sign-up' },
 ]
 
 export function SiteHeader() {
