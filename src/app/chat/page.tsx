@@ -3,15 +3,36 @@
 import { useState, useEffect } from "react"
 import toast from "react-hot-toast"
 import { AlertCircle } from "lucide-react"
-import { useUser } from "@clerk/nextjs"
+import { useUser, useSession } from "@clerk/nextjs"
 import ChatArea from "@/components/chatArea"
 import HistoryArea from "@/components/historyArea"
 import type { ChatMessage, Conversation } from "@/lib/types"
 import { ERROR_ASSISTANT_MESSAGE, INITIAL_ASSISTANT_MESSAGE } from "@/lib/constants"
-import { supabase } from "@/lib/supabaseClient"
+import { createClient } from "@supabase/supabase-js"
 
 export default function Chat() {
   const { user } = useUser()
+  const { session } = useSession()
+
+  const supabase = createClient(
+    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    process.env.NEXT_PUBLIC_SUPABASE_KEY!,
+    {
+      global: {
+        fetch: async (url, options = {}) => {
+          const clerkToken = await session?.getToken({
+            template: "supabase",
+          })
+          const headers = new Headers(options?.headers)
+          headers.set("Authorization", `Bearer ${clerkToken}`)
+          return fetch(url, {
+            ...options,
+            headers,
+          })
+        },
+      },
+    }
+  )
 
   const [conversations, setConversations] = useState<Conversation[]>([])
   const [messages, setMessages] = useState<ChatMessage[]>([])
@@ -42,32 +63,40 @@ export default function Chat() {
       throw new Error("User is not authenticated")
     }
 
-    const timestamp = new Date().toISOString()
-    const conversationId = `${user.id}_${timestamp}`
+    try {
+      const timestamp = new Date().toISOString()
+      const conversationId = `${user.id}_${timestamp}`
 
-    const { error } = await supabase.from("chats").insert({
-      user_id: user.id,
-      conversation_id: conversationId,
-      created_at: timestamp,
-    })
+      const { error } = await supabase
+        .from("chats")
+        .insert({
+          user_id: user.id,
+          conversation_id: conversationId,
+          created_at: timestamp,
+        })
+        .select()
 
-    if (error) {
-      console.error("Error creating conversation:", error)
+      if (error) {
+        console.error("Error creating conversation:", error)
+        throw error
+      }
+
+      setCurrentConversationId(conversationId)
+      await fetchHistory()
+
+      const initialAssistantMessage: ChatMessage = {
+        role: "assistant",
+        content: INITIAL_ASSISTANT_MESSAGE,
+        created_at: timestamp,
+      }
+
+      setMessages([initialAssistantMessage])
+      await saveMessage(initialAssistantMessage, conversationId)
+      return conversationId
+    } catch (error) {
+      console.error("Detailed error:", error)
       throw error
     }
-
-    setCurrentConversationId(conversationId)
-    fetchHistory()
-
-    const initialAssistantMessage: ChatMessage = {
-      role: "assistant",
-      content: INITIAL_ASSISTANT_MESSAGE,
-      created_at: timestamp,
-    }
-
-    setMessages([initialAssistantMessage])
-    await saveMessage(initialAssistantMessage, conversationId)
-    return conversationId
   }
 
   const getConversationId = async () => {

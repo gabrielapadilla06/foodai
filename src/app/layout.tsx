@@ -13,8 +13,8 @@ const fontSans = FontSans({
 })
 
 export const metadata: Metadata = {
-  title: "Food AI",
-  description: "AI powered food R&D",
+  title: "Sustainabite",
+  description: "AI powered food innovation",
 }
 
 export default function RootLayout({
