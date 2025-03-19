@@ -61,7 +61,6 @@ const HistoryArea: React.FC<ConversationListProps> = ({ conversations, onSelectC
             >
               <div className="flex-grow text-left overflow-hidden">
                 <h3 className="font-medium text-gray-800 dark:text-gray-100">{conversation.title}</h3>
-                <p className="text-sm text-gray-500 dark:text-gray-400 truncate">{conversation.lastMessage || 'No messages'}</p>
               </div>
               {conversation.id == currentConversationId ? null :
                 <button
