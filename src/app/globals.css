@@ -80,7 +80,7 @@
 
 @layer base {
    * {
-      @apply border-border;
+      @apply border-neutral-200 dark:border-neutral-800 outline-neutral-800/50;
    }
    body {
       @apply bg-background text-foreground;
@@ -109,9 +109,9 @@
 
  @layer base {
   * {
-    @apply border-border outline-ring/50;
+      @apply border-neutral-200 dark:border-neutral-800 outline-neutral-800/50;
    }
   body {
-    @apply bg-background text-foreground;
+      @apply bg-white;
    }
 }

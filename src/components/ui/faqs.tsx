@@ -15,7 +15,7 @@ export default function FAQSection() {
                 What is a food byproduct?
               </AccordionTrigger>
               <AccordionContent className="text-gray-600">
-                --
+                Food by-products remain underutilized despite their potential for human consumption. Industrial food processing alone generates substantial amounts of by-products, often representing 30-60% of the total weight of raw materials. These include fruit peels, vegetable scraps, grain husks, seeds, and pomace, which are frequently discarded.
               </AccordionContent>
             </AccordionItem>
 
@@ -24,7 +24,7 @@ export default function FAQSection() {
                 How does sustainabite works?
               </AccordionTrigger>
               <AccordionContent className="text-gray-600">
-                --
+                An AI-powered tool that enables food processors to identify optimal applications for their agricultural by-products based on their specific infrastructure and available waste streams. The system analyzes user inputs about processing equipment and by-product inventory to generate tailored recommendations for product development opportunities and necessary infrastructure upgrades, facilitating the transformation of waste into value-added ingredients and additives.
               </AccordionContent>
             </AccordionItem>
           </Accordion>

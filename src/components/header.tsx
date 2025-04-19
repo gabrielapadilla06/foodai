@@ -10,7 +10,7 @@ import logoImage from "@/images/image.jpeg"
 
 const menuItems = [
   { id: 1, label: "Home", href: "/" },
-  { id: 2, label: "About", href: "/solution" },
+  { id: 2, label: "About", href: "https://nonchalant-lightyear-73c.notion.site/Sustainabite-Transforming-Agricultural-By-Products-into-Value-Added-Food-Ingredients-1a9c2377d1b0805a83c3daca13a29e11" },
 ]
 
 export function SiteHeader() {
@@ -77,10 +77,10 @@ export function SiteHeader() {
                       Get Started
                     </Link>
                     <Link
-                      href="/sign-up"
+                      href="https://www.youtube.com/watch?v=O9wMI2U_OBM"
                       className="hidden rounded-md bg-gray-100 px-5 py-2.5 text-sm font-medium text-dark_green transition hover:text-dark_green/75 sm:block"
                     >
-                      Register
+                      Demo
                     </Link>
                   </>
                 )}
